@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stressor</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+</head>
+<body>
+
+			
+		<!-- Header -->
+		<header id="header">
+			<h1>Stress Level Prediction</h1>
+			<p>Hey! Having a tough day? Check out your stress level? <br />
+				Input the following to find out:</p>
+		</header>
+		
+	<!-- Main input for receiving Query to our model -->
+
+		<form action="{{url_for('predict')}}" method="post">
+        	<div class="form-group">
+				<label for="param1">Parameter 1</label>
+				<input id="param1" type="number" name="sr" placeholder="Enter Snoring Range (dB)" required min="30.0" max="100.0" />
+			</div>
+			<div class="form-group">
+				<label for="param2">Parameter 2</label>
+				<input id="param2" type="number" name="rr" placeholder="Enter Respiration Rate (breaths per minute)" required min="12" max="54" />
+			</div>
+			<div class="form-group">
+				<label for="param3">Parameter 3</label>
+				<input id="param3" type="text" name="t" placeholder="Enter Body Temperature (Fahrenheit)" required min="70.0" max="99.0" />
+			</div>
+			<div class="form-group">
+				<label for="param4">Parameter 4</label>
+				<input id="param4" type="text" name="lm" placeholder="Enter Limb Movement Rate" required min="4" max="30" />
+			</div>
+			<div class="form-group">
+				<label for="param5">Parameter 5</label>
+				<input id="param5" type="text" name="bo" placeholder="Enter Blood Oxygen Level (mmHg)" required min="75" max="100" />
+			</div>
+			<div class="form-group">
+				<label for="param6">Parameter 6</label>
+				<input id="param6" type="text" name="rem" placeholder="Enter Rate of Eye Movement (frames-per-second )" required min="50" max="150" />
+			</div>
+			<div class="form-group">
+				<label for="param7">Parameter 7</label>
+				<input id="param7" type="number" name="sr.1" placeholder="Enter Sleeping Rate (Hours)" required min="0" max="9" />
+			</div>
+			<div class="form-group">
+				<label for="param8">Parameter 8</label>
+				<input id="param8" type="number" name="hr" placeholder="Enter Heart Rate (beat per minute)" required min="40" max="200" />
+			</div>
+				<button type="submit" class="btn btn-primary btn-large">Predict</button>
+				<button type="reset" class="btn btn-primary btn-large">Clear</button>
+        
+    	</form>
+
+        {% if prediction==0 %}
+            <h3 style="color:green">Your Stress Level is Low, Stay Healthy</h3>
+        {% elif prediction==1 %}
+            <h3 style="color:darkblue">Your Stress Level is Medium Low, You are Okay!</h3>
+        {% elif prediction==2 %}
+            <h3 style="color:crimson">Your Stress Level is Medium, You getting worked out</h3>
+        {% elif prediction==3 %}
+            <h3 style="color:darkred">Your Stress Level is Medium High, Take it easy!</h3>
+        {% elif prediction==4 %}
+            <h3 style="color:red">Your Stress Level is Very High, You need to see a doctor now!</h3>
+        {% endif %}
+
+
+
+</body>
+</html>
