@@ -7,7 +7,12 @@
     <title>Stressor</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
 	<style>
-		
+		body {
+			background: url("..image/vanishing-stripes.svg");
+    		background-repeat: no-repeat;
+    		background-size: cover;
+}
+		}
 	</style>
 </head>
 <body>
@@ -61,15 +66,15 @@
     	</form>
 
         {% if prediction==0 %}
-            <h3 style="color:green">Your Stress Level is Low, Stay Healthy</h3>
+            <h3 style="color:green">Stress Level is Low</h3>
         {% elif prediction==1 %}
-            <h3 style="color:darkblue">Your Stress Level is Medium Low, You are Okay!</h3>
+            <h3 style="color:darkblue">Stress Level is Medium Low</h3>
         {% elif prediction==2 %}
-            <h3 style="color:crimson">Your Stress Level is Medium, You getting worked out</h3>
+            <h3 style="color:crimson">Stress Level is Medium</h3>
         {% elif prediction==3 %}
-            <h3 style="color:darkred">Your Stress Level is Medium High, Take it easy!</h3>
+            <h3 style="color:darkred">Stress Level is Medium High</h3>
         {% elif prediction==4 %}
-            <h3 style="color:red">Your Stress Level is Very High, You need to see a doctor now!</h3>
+            <h3 style="color:red">Stress Level is Very High</h3>
         {% endif %}
 
 
