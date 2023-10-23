@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+<form class="row g-3" style="padding: 2rem;" method="POST">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" name="email">
+  </div>
+  <div class="col-md-6">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="Username" name="username">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password1" name="password1">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="password2" name="password2">
+  </div>
+  <div class="col-6">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="marital">
+        <option value="1" selected>Single</option>
+        <option value="2">Married</option>
+        <option value="3">Divorced</option>
+      </select>
+      <label for="floatingSelect">Marital Status</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="work">
+        <option value="1" selected>Student</option>
+        <option value="2">Employed</option>
+        <option value="3">Unemployed</option>
+      </select>
+      <label for="floatingSelect">Employment Status</label>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select" name="state">
+      <option selected>Choose...</option>
+      <option value="AB">Abia</option>
+      <option value="AD">Adamawa</option>
+      <option value="AK">Akwa Ibom</option>
+      <option value="AN">Anambra</option>
+      <option value="BA">Bauchi</option>
+      <option value="BE">Bayelsa</option>
+      <option value="BO">Borno</option>
+      <option value="CR">Cross River</option>
+      <option value="DA">Delta</option>
+      <option value="EI">Ebonyi</option>
+      <option value="ED">Edo</option>
+      <option value="EK">Ekiti</option>
+      <option value="EN">Enugu</option>
+      <option value="FC">FCT</option>
+      <option value="GO">Gombe</option>
+      <option value="IM">Imo</option>
+      <option value="JI">Jigawa</option>
+      <option value="KD">Kaduna</option>
+      <option value="KE">Kebbi</option>
+      <option value="KN">Kano</option>
+      <option value="KT">Katsina</option>
+      <option value="KW">Kwara</option>
+      <option value="LA">Lagos</option>
+      <option value="NA">Nasarawa</option>
+      <option value="NI">Niger</option>
+      <option value="OG">Ogun</option>
+      <option value="ON">Ondo</option>
+      <option value="OS">Osun</option>
+      <option value="OY">Oyo</option>
+      <option value="PL">Plateau</option>
+      <option value="RI">Rivers</option>
+      <option value="SO">Sokoto</option>
+      <option value="TA">Taraba</option>
+      <option value="YO">Yobe</option>
+      <option value="ZA">Zamfara</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity" name="city">
+  </div>
+  
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip" name="zipcode">
+  </div>
+  
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Signup</button>
+  </div>
+</form>
+{% endblock %}

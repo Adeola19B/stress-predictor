@@ -1,0 +1,27 @@
+body {
+    background:  rgb(128,24,69);
+	background: linear-gradient(54deg, rgba(128,24,69,0.9415966215587798) 16%, rgba(47,219,180,1) 61%, rgba(51,3,3,1) 86%);
+	background-size: cover;
+	background-attachment: fixed;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#header h1 {
+    color: rgb(249, 173, 97);
+    padding: 1rem;
+}
+
+#header p {
+    color:aliceblue;
+    padding: 1rem;
+}
+
+#button-sr {
+    padding: 1rem;
+}
+
+
+
+.row {
+    padding: 1rem;
+}
