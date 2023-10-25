@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}My Home Page{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+{% block content %}
+<!-- Header -->
+<header id="header">
+    <h1><strong> Stress Level Prediction</strong></h1>
+	<p>Hey! Having a tough day? Check out your stress level? <br />
+		Input the following to find out:</p>
+</header>
+		
+	<!-- Main input for receiving Query to our model -->
+<div class="result-me" style="text-align: center; padding: 1rem;">
+	{% if outcome==0 %}
+		<h3 style="color:green">Stress Level is Low</h3>
+	{% elif outcome==1 %}
+		<h3 style="color:darkblue">Stress Level is Medium Low</h3>
+	{% elif outcome==2 %}
+		<h3 style="color:crimson">Stress Level is Medium</h3>
+	{% elif outcome==3 %}
+		<h3 style="color:darkred">Stress Level is Medium High</h3>
+	{% elif outcome==4 %}
+		<h3 style="color:red">Stress Level is Very High</h3>
+	{% endif %}
+</div>
+
+<form action='/predict' method="POST">
+    <div class="row">
+		<div class="col">
+			<label for="param1" class="form-label">Parameter 1</label>
+			<input class="form-control" id="param1" step="0.01" type="number" name="sr" placeholder="Enter Snoring Range (dB) Values Between 30 and 100" required min="30" max="100" />
+		</div>
+		<div class="col">
+			<label for="param2" class="form-label">Parameter 2</label>
+			<input class="form-control" id="param2" step="0.01" type="number" name="rr" placeholder="Enter Respiration Rate (breaths per minute) Values Between 12 and 54" required min="12" max="54" />
+		</div>
+	</div>
+			
+	<div class="row">
+		<div class="col">
+			<label for="param3" class="form-label">Parameter 3</label>
+			<input class="form-control" id="param3" step="0.01" type="number" name="temp" placeholder="Enter Body Temperature (Fahrenheit)" required min="70" max="99" />
+		</div>
+		<div class="col">
+			<label for="param4">Parameter 4</label>
+			<input class="form-control" id="param4" step="0.01" type="number" name="lm" placeholder="Enter Limb Movement Rate" required min="4" max="30" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label for="param5" class="form-label">Parameter 5</label>
+			<input class="form-control" id="param5" step="0.01" type="number" name="bo" placeholder="Enter Blood Oxygen Level (mmHg)" required min="75" max="100" />
+		</div>
+		<div class="col">
+			<label for="param6" class="form-label">Parameter 6</label>
+			<input class="form-control" id="param6" step="0.01" type="number" name="rem" placeholder="Enter Rate of Eye Movement (frames-per-second )" required min="50" max="150" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label for="param7" class="form-label">Parameter 7</label>
+			<input class="form-control" id="param7" step="1.00" type="number" name="sr.1" placeholder="Enter Sleeping Rate (Hours)" required min="0" max="9" />
+		</div>
+		<div class="col">
+			<label for="param8" class="form-label">Parameter 8</label>
+			<input class="form-control" id="param8" step="0.01" type="number" name="hr" placeholder="Enter Heart Rate (beat per minute)" required min="40" max="200" />
+		</div>
+	</div>
+	<div id="button-sr">
+		<button type="submit" class="btn btn-success btn-lg">Predict</button>
+		<button type="reset" class="btn btn-dark btn-lg">Clear</button>
+	</div>
+			
+        
+</form>
+{% endblock %}
