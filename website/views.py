@@ -11,7 +11,7 @@ views = Blueprint('views', __name__)
 
 def predictor(data):
     df = pd.DataFrame(data, index=[0])
-    load_model = joblib.load('./website/static/classifier.joblib')
+    load_model = joblib.load('./Models/classifier.joblib')
     result = load_model.predict(df)[0]
     return result
     
